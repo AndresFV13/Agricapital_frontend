@@ -13,6 +13,5 @@ export interface Product {
   supplier: string;
   nutritionalInfoId?: number;  
   nutritionalInfo?: NutritionalInfo;
-  discount: number; 
   imageUrl?: string; 
 }

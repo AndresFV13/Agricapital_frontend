@@ -71,13 +71,8 @@ const ProductsList: React.FC = () => {
             <h3 className="product-name">{product.name}</h3>
             <div className='product-price-container'>
               <p className="product-price">
-                ${product.discount.toFixed(2)}/kg
+                ${product.price.toFixed(2)}/kg
               </p>
-              {product.discount !== product.price && (
-                <p className="product-price-discount">
-                  ${product.price.toFixed(2)}/kg
-                </p>
-              )}
             </div>
             <div className="product-details">
               <span className="product-category">{product.category}</span>
