@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# Agricapital Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Agricapital Frontend es el front de la aplicación AgriMarket, diseñada para gestionar y visualizar Productos ficticios . 
+Ofrece una interfaz moderna, interactiva y responsiva, que permite a los usuarios acceder a información de los productos, 
+filtrar dichos productos y conocer los descuentos.
 
-Currently, two official plugins are available:
+## 🧩 Stack tecnológico
+- **Lenguajes**: TypeScript, JavaScript
+- **Frameworks**: React
+- **Herramientas de construcción**: Vite
+- **Gestor de paquetes**: npm
+- **Servidor web**: Nginx
+- **Contenedores**: Docker
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Patrón de desarrollo
+La aplicación sigue el patrón **Component-Based Architecture**, dividiendo la interfaz en componentes reutilizables y modulares. Además, 
+se utiliza **TypeScript** con un enfoque de tipado estricto para garantizar un código robusto y mantenible.
 
-## Expanding the ESLint configuration
+## Arquitectura
+La arquitectura es una **SPA (Single Page Application)**. React maneja el enrutamiento y la lógica del cliente. El proyecto tiene dos etapas principales:
+1. **Etapa de construcción**: Node.js se utiliza para compilar y construir los archivos estáticos.
+2. **Etapa de producción**: Los archivos estáticos se sirven mediante un servidor Nginx en un contenedor Docker.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📁 Estructura del Proyecto
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+src/
+├── assets/             # Recursos estáticos (imágenes, estilos, etc.)
+├── components/         # Componentes reutilizables de UI
+│   ├── common/         # Componentes comunes
+│   │   └── modal/      # Componente Modal
+│   ├── features/       # Componentes relacionados con funcionalidades
+│   │   ├── banner/     # Componente para banners informativos
+│   │   └── products/   # Componente de productos
+│   ├── footer/         # Pie de página
+│   ├── header/         # Encabezado de la aplicación
+│   └── layout/         # Estructura general de diseño
+├── contanst/           # Constantes compartidas
+└── interface/          # Interfaces y tipos TypeScript
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Funcionalidades principales
+- Visualización de los datos de los productos agricolas registrados.
+- Interfaz de usuario interactiva y responsiva.
+- Filtrado de información.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔧 Pasos para instalación y ejecución
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Requisitos previos
+- Tener instalado Docker.
+- Tener instalado Node.js (versión 22.11.0 o superior) y npm.
+
+
+### 1. Clona el repositorio
+
+```bash
+git clone https://github.com/AndresFV13/Agricapital_backend.git
+cd Agricapital_backend
+```
+
+### 2. Instalar dependencias
+
+```bash
+npm install
+
+```
+
+### 3. Configura las variables de entorno
+
+Copia el archivo `.env.example` a `.env` y ajusta las variables de entorno según tu configuración local.
+```bash
+base_url=
+```
+
+### 4. Ejecuta la aplicación
+
+```bash
+npm run dev
+
 ```
