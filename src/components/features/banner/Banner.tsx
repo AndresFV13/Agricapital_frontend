@@ -1,5 +1,5 @@
 
-export default function Banner() {
+const Banner = () => {
   return (
     <>
         <section className="banner">
@@ -49,3 +49,5 @@ export default function Banner() {
     </>
   );
 }
+
+export default Banner;

@@ -11,8 +11,8 @@ const Header = () => {
         </div>
         <nav className={`header-nav ${isOpen ? 'visible' : ''}`}>
           <ul>
-            <li><a href="#">Frutas</a></li>
-            <li><a href="#">Verduras</a></li>
+            <li><a href="#products-container">Productos</a></li>
+            <li><a href="#">Nosotros</a></li>
             <li><a href="#">Proveedores</a></li>
             <li><a href="#">Contacto</a></li>
             <button className='header-button-mobile'>
