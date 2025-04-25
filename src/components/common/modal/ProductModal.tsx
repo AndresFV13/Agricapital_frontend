@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Product } from '../../../interface/ProductListInterface';
+import { Product } from '../../../interface/Product.dto';
 
 interface ProductModalProps {
   product: Product;
@@ -11,13 +11,12 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
   const [closing, setClosing] = useState(false);
 
   useEffect(() => {
-    // Timeout para activar la animación después de montar el componente
     setTimeout(() => setIsActive(true), 10);
   }, []);
 
   const handleClose = () => {
     setClosing(true);
-    setTimeout(onClose, 300); // Coincide con la duración de la transición
+    setTimeout(onClose, 300); 
   };
 
   return (
